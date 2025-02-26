@@ -1,3 +1,8 @@
+---
+header-includes: |
+  \usepackage{forest}
+---
+
 # CLASE 4 - 25/02/2025
 
 ## Lógica proposicional
@@ -153,3 +158,32 @@ En este ejemplo solo veremos la forma más directa, se entiende que todos los ca
 1. $ATOMS(\varphi) = \{\varphi\}$ con $\varphi\in AT$
 2. $ATOMS((\alpha * \beta)) = ATOMS(\alpha)\cup ATOMS(\beta)$ con $\alpha,\beta\in PROP$
 3. $ATOMS((\neg\alpha)) = ATOMS(\alpha)$ con $\alpha\in PROP$
+
+### Árboles etiquetados y ordenados
+
+Consideramos a $\mathcal{T(L)}$ de los árboles etiquetados con palabras del lenguaje $\mathcal{L}$.
+
+#### Propiedades
+
+- Cada nodo tiene como máximo un padre, si no tiene un padre, entonces es la raíz del árbol
+- Cada nodo tiene un primer hijo, un segundo hijo, etc..., ordenados de izquierda a derecha. Si no tiene hijos, es una hoja del árbol
+- A cada nodo se le etiqueta con una palabra de $\mathcal{L}$
+
+Ahora veamos otro ejemplo de ERP sobre $PROP$, incluyendo este lenguaje de árboles etiquetados:
+
+#### $ÁRBOL: PROP\to\mathcal{T}(PROP)$
+
+1. $ÁRBOL(\varphi) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 1 de arbol](images/arbol-1.png)</div> con $\varphi\in AT$
+2. $ÁRBOL((\alpha * \beta)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 2 de arbol](images/arbol-2.png)</div> con $\alpha,\beta\in PROP$
+3. $ÁRBOL((\neg\alpha)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 3 de arbol](images/arbol-3.png)</div> con $\alpha\in PROP$
+
+O visto de otra forma:
+
+1. $H_{AT}:AT\to \mathcal{T}(PROP)$
+    - $H_{AT} := \ldots$
+
+2. $H_*: PROP\times\mathcal{T}(PROP)\times PROP\times\mathcal{T}(PROP)\to\mathcal{T}(PROP)$
+    - $H_*(\alpha, t_1, \beta, t_2) := \ldots$
+
+3. $H_{\neg}: PROP\times\mathcal{T}(PROP)\to\mathcal{T}(PROP)$
+    - $H_{\neg}(\alpha, t) := \ldots$
