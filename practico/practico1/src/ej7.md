@@ -93,10 +93,10 @@ $$O(b, b\alpha c\beta b) = O(b,\alpha) + O(b,\beta) + 2$$
 Ya que entendemos que la cantidad de $b$ para esta palabra será la suma entre la cantidad de $b$ en $\alpha$ y $\beta$ más las dos que se agregan en el paso de construcción. Sustituyendo con lo que hallamos anteriormente:
 
 $$
-\begin{align*}
+\begin{aligned}
 O(b, b\alpha c\beta b) &= 2\cdot k_1 + 2\cdot k_2 + 2 \\
 &= 2 \cdot (k_1 + k_2 + 1)
-\end{align*}
+\end{aligned}
 $$
 
 Con esto concluimos que $b\alpha c\beta b$ tiene una cantidad de ocurrencias de $b$ par. Por lo que probamos la propiedad:

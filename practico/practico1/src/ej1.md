@@ -4,7 +4,7 @@
 
 Considere el conjunto $\mathbb{R}$ de los números reales; la lista de subconjuntos de $\mathbb{R}$ de la columna izquierda; y los conjuntos de reglas de la columna derecha.
 
-![conjuntos y reglas](/practico/practico1/images/ej1.png)
+![conjuntos y reglas](images/ej1.png)
 
 1. Indique cuales subconjuntos satisfacen cuales conjuntos de reglas.
 
