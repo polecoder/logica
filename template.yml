@@ -1,0 +1,28 @@
+pdf-engine: xelatex
+metadata:
+  title: ""
+variables:
+  fontsize: 12pt
+  mainfont: "TeX Gyre Termes"
+  geometry: a4paper, margin=2.5cm
+  header-includes: |
+    \usepackage{titlesec}
+    \usepackage{fancyhdr}
+    \usepackage{parskip}
+    \usepackage{hyperref}
+    \usepackage{amssymb}
+    \usepackage{amsmath}
+    \usepackage{mathtools}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \rfoot{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \thispagestyle{fancy}
+    \titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+    \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+    \hypersetup{
+      colorlinks=true,
+      linkcolor=black,
+      urlcolor=blue
+    }

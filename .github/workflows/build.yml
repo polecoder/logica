@@ -1,0 +1,51 @@
+name: Build Markdown to PDF
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Convert Markdown to PDF
+        run: |
+          find . -type f -path "*/src/*.md" | while read md_file; do
+            pdf_file=$(echo "$md_file" | sed 's|/src/|/dist/|; s|.md$|.pdf|')
+            mkdir -p "$(dirname "$pdf_file")"
+            
+            # Verificar si el archivo .md está vacío
+            if [ ! -s "$md_file" ]; then
+              echo "⚠️ Archivo vacío: $md_file, omitiendo..."
+              continue
+            fi
+            
+            # Intentar la conversión a PDF con manejo de errores
+            if ! pandoc "$md_file" -o "$pdf_file" --pdf-engine=xelatex --defaults=template.yml ; then
+              echo "❌ Error generando PDF para $md_file"
+              exit 1
+            fi
+          done
+
+      - name: Commit and push PDFs
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          # Verifico si hay cambios antes de commitear
+          if git diff --staged --quiet; then
+            echo "No hay cambios en los PDFs, no se realizará un commit."
+          else
+            git commit -m "Generate PDFs from Markdown"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
