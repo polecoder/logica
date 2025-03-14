@@ -1,9 +1,10 @@
 pdf-engine: xelatex
 metadata:
-  title: ""
+  title: "Lógica"
+  author: "Mauro Polenta Mora"
 variables:
   fontsize: 12pt
-  mainfont: "TeX Gyre Termes"
+  mainfont: "Latin Modern Roman"
   geometry: a4paper, margin=2.5cm
   header-includes: |
     \usepackage{titlesec}
@@ -13,16 +14,21 @@ variables:
     \usepackage{amssymb}
     \usepackage{amsmath}
     \usepackage{mathtools}
+    \usepackage{unicode-math}
+
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+
+    \titleformat{\section}{\LARGE\bfseries}{\thesection.}{0.5em}{}
+    \titleformat{\subsection}{\Large\bfseries}{\thesubsection.}{0.5em}{}
+    \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection.}{0.5em}{}
+    \titleformat{\paragraph}{\normalsize\bfseries}{}{0.5em}{}
+    \titleformat{\subparagraph}{\small\bfseries}{}{0.5em}{}
+
     \pagestyle{fancy}
     \fancyhf{}
     \rfoot{\thepage}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-    \thispagestyle{fancy}
-    \titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
-    \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
-    \hypersetup{
-      colorlinks=true,
-      linkcolor=black,
-      urlcolor=blue
+    \fancypagestyle{plain}{
+      \fancyhf{}
+      \rfoot{\thepage}
     }
