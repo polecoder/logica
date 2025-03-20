@@ -39,7 +39,7 @@ $$
 
 Queremos verificar cuando la proposición $(p \to q) \to ((q \to p_i) \to (p \to r))$ es tautología según quién es $p_i$. Apliquemos el concepto de Tableau semántico.
 
-![Tableau semántico parte b](images/ej2fig1.png)
+![Tableau semántico parte b](/practico/practico3/images/ej2fig1.png)
 
 Para que la proposición sea una tautología queremos encontrar una contradicción en todas las ramas del árbol. Observemos que para que esto suceda, $p_i = r$, para que también la última rama tenga una contradicción. Esto con deja con la proposición
 
@@ -51,7 +51,7 @@ $$
 
 Queremos verificar cuando la proposición $(p \to (q \to r)) \to (p_i \to (p \to p_i))$ es tautología según quién es $p_i$. Apliquemos el concepto de Tableau semántico.
 
-![Tableau semántico parte c](images/ej2fig2.png)
+![Tableau semántico parte c](/practico/practico3/images/ej2fig2.png)
 
 Para que la proposición sea una tautología queremos encontrar una contradicción en todas las ramas del árbol. Observemos que no importa el valor de $p_i$, siempre tendremos una contradicción.
 
@@ -63,7 +63,7 @@ $$
 
 Queremos verificar cuando la proposición $(p \to q) \to p_i$ es tautología según quién es $p_i$. Apliquemos el concepto de Tableau semántico.
 
-![Tableau semántico parte d](images/ej2fig3.png)
+![Tableau semántico parte d](/practico/practico3/images/ej2fig3.png)
 
 Para que la proposición sea una tautología queremos encontrar una contradicción en todas las ramas del árbol. Observemos que sin importar el valor de $p_i$ la primer rama nunca podrá contener una contradicción , ya que nos dice que ambas letras proposicionales en juego siempre serán falsas.
 
@@ -75,7 +75,7 @@ $$
 
 Queremos verificar cuando la proposición $(p \to (q \to r)) \to ((p_i \to q) \to (p \to r))$ es tautología según quién es $p_i$. Apliquemos el concepto de Tableau semántico.
 
-![Tableau semántico parte e](images/ej2fig4.png)
+![Tableau semántico parte e](/practico/practico3/images/ej2fig4.png)
 
 Para que la proposición sea una tautología queremos encontrar una contradicción en todas las ramas del árbol. Observemos hay una sola rama que no tiene una contradicción, la única forma de que esta lo sea es si $p_i = p$. Esto nos deja con la proposición:
 
@@ -87,7 +87,7 @@ $$
 
 Queremos verificar cuando la proposición $((p \to q) \to p) \to p_i$ es tautología según quién es $p_i$. Apliquemos el concepto de Tableau semántico.
 
-![Tableau semántico parte f](images/ej2fig5.png)
+![Tableau semántico parte f](/practico/practico3/images/ej2fig5.png)
 
 Para que la proposición sea una tautología queremos encontrar una contradicción en todas las ramas del árbol. Observemos hay una dos ramas que no tienen una contradicción, pero si $p_i = p$, en ambas encontramos una contradicción. Por lo que esto nos deja con la proposición
 
