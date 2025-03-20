@@ -7,7 +7,7 @@
 (b) Determine a qué proposiciones corresponden los árboles de la Figura 1.
 
 <div align="center">
-    <img src="images/ej2_fig1.png">
+    <img src="../images/ej2_fig1.png">
 </div>
 
 **Figura 1:** Árboles de proposiciones del Ejercicio 2.
@@ -21,7 +21,7 @@ Queremos representar la siguiente proposición
 $$(((\neg p_2) \to (p_3 \lor (p_1 \leftrightarrow p_2))) \land (\neg p_3)) \in PROP$$
 
 <div align="center">
-    <img style="width: 50%; max-width: 300px;" alt="fig2" src="images/ej2_fig2.png">
+    <img style="width: 50%; max-width: 300px;" alt="fig2" src="../images/ej2_fig2.png">
 </div>
 
 #### Proposición 2
@@ -31,7 +31,7 @@ Queremos representar la siguiente proposición:
 $$((p_7 \to (\neg\bot)) \leftrightarrow ((p_4 \land (\neg p_2)) \to p_1)) \in PROP$$
 
 <div align="center">
-    <img style="width: 50%; max-width: 300px;" alt="fig3" src="images/ej2_fig3.png">
+    <img style="width: 50%; max-width: 300px;" alt="fig3" src="../images/ej2_fig3.png">
 </div>
 
 ### Resolución (parte b)

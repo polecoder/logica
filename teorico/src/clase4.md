@@ -173,9 +173,9 @@ Ahora veamos otro ejemplo de ERP sobre $PROP$, incluyendo este lenguaje de árbo
 
 #### $ÁRBOL: PROP\to\mathcal{T}(PROP)$
 
-1. $ÁRBOL(\varphi) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 1 de arbol](images/arbol-1.png)</div> con $\varphi\in AT$
-2. $ÁRBOL((\alpha * \beta)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 2 de arbol](images/arbol-2.png)</div> con $\alpha,\beta\in PROP$
-3. $ÁRBOL((\neg\alpha)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 3 de arbol](images/arbol-3.png)</div> con $\alpha\in PROP$
+1. $ÁRBOL(\varphi) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 1 de arbol](../images/arbol-1.png)</div> con $\varphi\in AT$
+2. $ÁRBOL((\alpha * \beta)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 2 de arbol](../images/arbol-2.png)</div> con $\alpha,\beta\in PROP$
+3. $ÁRBOL((\neg\alpha)) = $<div style="display: inline-block; vertical-align: middle;">![Propiedad 3 de arbol](../images/arbol-3.png)</div> con $\alpha\in PROP$
 
 O visto de otra forma:
 

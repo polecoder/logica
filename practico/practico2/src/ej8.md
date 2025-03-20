@@ -56,7 +56,7 @@ Calculemos $r$ para las proposiciones del Ejercicio 1:
 
 $$(((\neg p_2) \to (p_3 \lor (p_1 \leftrightarrow p_2))) \land (\neg p_3)) \in PROP$$
 
-![fig1](images/ej2_fig2.png)
+![fig1](../images/ej2_fig2.png)
 
 Calculemos su altura:
 
@@ -66,7 +66,7 @@ $$r((((\neg p_2) \to (p_3 \lor (p_1 \leftrightarrow p_2))) \land (\neg p_3))) = 
 
 $$((p_7 \to (\neg\bot)) \leftrightarrow ((p_4 \land (\neg p_2)) \to p_1)) \in PROP$$
 
-![fig2](images/ej2_fig3.png)
+![fig2](../images/ej2_fig3.png)
 
 Calculemos su altura:
 
@@ -92,7 +92,7 @@ Calculemos $con$ para las proposiciones del Ejercicio 1:
 
 $$(((\neg p_2) \to (p_3 \lor (p_1 \leftrightarrow p_2))) \land (\neg p_3)) \in PROP$$
 
-![fig1](images/ej2_fig2.png)
+![fig1](../images/ej2_fig2.png)
 
 Calculemos la cantidad de conectivos:
 
@@ -102,7 +102,7 @@ $$con((((\neg p_2) \to (p_3 \lor (p_1 \leftrightarrow p_2))) \land (\neg p_3))) 
 
 $$((p_7 \to (\neg\bot)) \leftrightarrow ((p_4 \land (\neg p_2)) \to p_1)) \in PROP$$
 
-![fig2](images/ej2_fig3.png)
+![fig2](../images/ej2_fig3.png)
 
 Calculemos la cantidad de conectivos:
 
@@ -126,7 +126,7 @@ Esta afirmación es FALSA, veamos el siguiente contraejemplo:
 
 $$\varphi = \neg(\neg(\neg p_1))$$
 
-![fig3](images/ej6_fig3.png)
+![fig3](../images/ej6_fig3.png)
 
 Observemos que: $r(\varphi) = 3$ y $con(\varphi) = 3$
 

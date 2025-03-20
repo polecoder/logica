@@ -4,7 +4,7 @@
 
 Considere el alfabeto $\sum = \{a,b,c\}$, y los lenguajes $\Gamma$ y $\Delta$ definidos inductivamente con las siguientes reglas:
 
-![consigna](images/ej6.png)
+![consigna](../images/ej6.png)
 
 (a) Encuentre palabras de $\sum^*$ que no pertenezcan a $\Gamma$. Análogo para $\Delta$.
 
