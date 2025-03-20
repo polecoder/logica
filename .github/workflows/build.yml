@@ -20,6 +20,9 @@ jobs:
         run: |
           find . -type f -path "*/src/*.md" | while read md_file; do
             pdf_file=$(echo "$md_file" | sed 's|/src/|/dist/|; s|.md$|.pdf|')
+            base_dir=$(dirname "$md_file") # carpeta src
+            img_dir=$(dirname "$base_dir")/images # carpeta images
+
             mkdir -p "$(dirname "$pdf_file")"
             
             # Verificar si el archivo .md está vacío
@@ -29,7 +32,7 @@ jobs:
             fi
             
             # Intentar la conversión a PDF con manejo de errores
-            if ! pandoc "$md_file" -o "$pdf_file" --pdf-engine=xelatex --defaults=template.yml ; then
+            if ! pandoc "$md_file" -o "$pdf_file" --pdf-engine=xelatex --defaults=template.yml --resource-path="$img_dir" ; then
               echo "❌ Error generando PDF para $md_file"
               exit 1
             fi
