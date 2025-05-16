@@ -36,29 +36,29 @@ El lenguaje extendido para $\mathcal{M}$, notado $\mathcal{L(M)}$ se obtiene del
 Sea $\mathcal{M} = \left<A,R_1,\ldots,R_n,F_1,\ldots,F_m,\{C_i\mid 1\leq i\leq k\}\right>$ con tipo $\left<r_1,\ldots,r_n;a_1,\ldots,a_m;k\right>$.
 La interpretación de los términos cerrados de $\mathcal{L(M)}$ en $\mathcal{M}$ es una función $\_^{\mathcal{M}}:TERM_C\to|\mathcal{M}|$ que satisface:
 
-- $c_i^\mathcal{M}=C_i$ para todo $1\leq i\leq k$
-- $\overline{a}^\mathcal{M}$ para todo $a\in|\mathcal{M}|$
-- $f_i(t_1,\ldots,t_{a_i})^\mathcal{M}=F_i(t_1^\mathcal{M},\ldots, t_{a_i}^\mathcal{M})$ para $i=1,\ldots,m$
+- $c_i^{\mathcal{M}}=C_i$ para todo $1\leq i\leq k$
+- $\overline{a}^{\mathcal{M}}$ para todo $a\in|\mathcal{M}|$
+- $f_i(t_1,\ldots,t_{a_i})^{\mathcal{M}}=F_i(t_1^{\mathcal{M}},\ldots, t_{a_i}^{\mathcal{M}})$ para $i=1,\ldots,m$
 
 #### Ejemplo
 
-Sea $\mathcal{M}=\left<\mathbb{Z},Primo,+,-,0,1 \right>$ con tipo $\left<1;2,1;2\right>$. La interpretación de los términos cerrados de $\mathcal{L(M)}$ en $\mathcal{M}$ es una función $\_^\mathcal{M}:TERM_C\to\mathbb{Z}$ que satisface:
+Sea $\mathcal{M}=\left<\mathbb{Z},Primo,+,-,0,1 \right>$ con tipo $\left<1;2,1;2\right>$. La interpretación de los términos cerrados de $\mathcal{L(M)}$ en $\mathcal{M}$ es una función $\_^{\mathcal{M}}:TERM_C\to\mathbb{Z}$ que satisface:
 
-- $c_1^\mathcal{M} = 0$
-- $c_2^\mathcal{M} = 1$
-- $\overline{n}^\mathcal{M}$ para todo $n\in\mathbb{Z}$
-- $f_1(t_1,t_2)^\mathcal{M} = t_1^\mathcal{M}+t_2^\mathcal{M}$
-- $f_2(t_1)^\mathcal{M} = -t_1^\mathcal{M}$
+- $c_1^{\mathcal{M}} = 0$
+- $c_2^{\mathcal{M}} = 1$
+- $\overline{n}^{\mathcal{M}}$ para todo $n\in\mathbb{Z}$
+- $f_1(t_1,t_2)^{\mathcal{M}} = t_1^{\mathcal{M}}+t_2^{\mathcal{M}}$
+- $f_2(t_1)^{\mathcal{M}} = -t_1^{\mathcal{M}}$
 
 1. Para este caso, qué valor representa el término $f_1(f_2(c_1), c_2)$?
 
 $$
 \begin{aligned}
-&f_1(f_2(c_1), c_2)^\mathcal{M}\\
+&f_1(f_2(c_1), c_2)^{\mathcal{M}}\\
 &=\\
-&f_1(-c_1^\mathcal{M}, c_2^\mathcal{M})\\
+&f_1(-c_1^{\mathcal{M}}, c_2^{\mathcal{M}})\\
 &=\\
-&-c_1^\mathcal{M}+c_2^\mathcal{M}\\
+&-c_1^{\mathcal{M}}+c_2^{\mathcal{M}}\\
 &=\\
 &-0+1\\
 &=\\
@@ -70,11 +70,11 @@ $$
 
 $$
 \begin{aligned}
-&f_2(f_1(c_1,c_2))^\mathcal{M}\\
+&f_2(f_1(c_1,c_2))^{\mathcal{M}}\\
 &=\\
-&f_2(c_1^\mathcal{M}, c_2^\mathcal{M})\\
+&f_2(c_1^{\mathcal{M}}, c_2^{\mathcal{M}})\\
 &=\\
-&-(c_1^\mathcal{M}+c_2^\mathcal{M})\\
+&-(c_1^{\mathcal{M}}+c_2^{\mathcal{M}})\\
 &=\\
 &-(0+1)\\
 &=\\
