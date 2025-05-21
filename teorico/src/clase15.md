@@ -33,7 +33,7 @@ v^{\mathcal{M}}(f_1(f_2(c_1),c_2)='c_2)=1\\
 \iff\scriptstyle{(\text{interpretación de sentencias }(='))}\\
 f_1(f_2(c_1),c_2)^{\mathcal{M}}=c_2^{\mathcal{M}}\\
 \iff\scriptstyle{(\text{interpretación de términos cerrados})}\\
--c_1^{\mathcal{M}}+c_2^{\mathcal{M}}=c_2^\mathcal{M}\\
+-c_1^{\mathcal{M}}+c_2^{\mathcal{M}}=c_2^{\mathcal{M}}\\
 \iff\scriptstyle{(\text{interpretación de términos cerrados})}\\
 -0+1=1
 \end{aligned}
@@ -147,4 +147,4 @@ Sean $\alpha,\beta\in SENT$, $\gamma\in FORM, FV(\gamma)\subseteq\{x\}$. Entonce
 - $\mathcal{M}\models(\alpha\to\beta)$ sii (si $\mathcal{M}\models\alpha$ entonces $\mathcal{M}\models\beta$)
 - $\mathcal{M}\models(\alpha\leftrightarrow\beta)$ sii ($\mathcal{M}\models\alpha$ sii $\mathcal{M}\models\beta$)
 - $\mathcal{M}\models((\forall x)\gamma)$ sii para todo $a\in|\mathcal{M}|, \mathcal{M}\models\gamma[\overline{a},x]$
-- $\mathcal{M}\models((\exists x)\gamma)$ sii para todo $a\in|\mathcal{M}|, \mathcal{M}\models\gamma[\overline{a},x]$
+- $\mathcal{M}\models((\exists x)\gamma)$ sii existe $a\in|\mathcal{M}|$ tal que $\mathcal{M}\models\gamma[\overline{a},x]$
