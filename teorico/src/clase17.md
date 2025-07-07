@@ -1,118 +1,176 @@
-# CLASE 17 - 16/06/2025
+# CLASE 17 - 04/07/2025
 
-## Cálculo de la adjunta
+## Semántica de la lógica proposicional
 
-### Ejemplo 1
+### Equivalencia y generalización de las Leyes de De Morgan
 
-Sea $V=W=\mathbb{R}^3$ con producto interno usual, considerando la siguiente transformación lineal:
+#### Teorema 2.5.1 (Leyes de De Morgan generalizadas)
 
-- $T:\mathbb{R}^3\to\mathbb{R}^3$ definida por:
-- $T(x,y,z)=(y+z,x+y+2z,5x-y)$
+##### (CONTINUACIÓN) Demostración: $\neg(\forall x)\alpha\text{ eq }(\exists x)\neg\alpha$
 
-Para calcular $T^*(x',y',z')$ usamos la base canónica de $\mathbb{R}^3$, veamos de calcular $T^*$ para los vectores de la base canónica:
+Entonces, con el procedimiento que realizamos nos surgen algunas complicaciones:
+
+1. Por fuera queda siempre $\overline{\forall}\mathcal{M}$.
+2. Se arrastran constantes que surgen de la clausura.
+
+Veamos una posible solución para cada problema:
+
+1. Una práctica muy común en matemáticas, cuando no hay suposiciones adicionales sobre un elemento, considerar un elemento cualquiera. Si hubiera consideraciones adicionales hay que tenerlas en cuenta.
+2. Veamos una mejora para las constantes:
+    - El problema es acarrear las constantes del lenguaje extendido durante toda la demostración
+    - Para esto podemos separar la prueba en dos partes: primero probarlo para sentencias, y luego usar esa prueba para probar el caso general
+
+**Demostración: $\neg(\forall x)\alpha\text{ eq }(\exists x)\neg\alpha$ para sentencias**
+
+Suponemos que $FV(\alpha)\subseteq\{x\}$. Queremos probar que:
+
+$$
+(\overline{\forall}\mathcal{M})\mathcal{M}\models\neg(\forall x)\alpha\leftrightarrow(\exists x)\neg\alpha
+$$
+
+Tomando $\mathcal{M}$ de tipo adecuado cualquiera, hay que probar que:
+
+$$
+\mathcal{M}\models\neg(\forall x)\alpha\leftrightarrow(\exists x)\neg\alpha
+$$
+
+Aplicando 2.4.5, tenemos que probar:
+
+$$
+\mathcal{M}\models\neg(\forall x)\alpha\iff\mathcal{M}\models(\exists x)\neg\alpha\quad(i)
+$$
+
+Probemos $(i)$:
 
 $$
 \begin{aligned}
-&\left<(x,y,z), T^*(1,0,0)\right>\\
-&=\scriptstyle{(\text{definición de la adjunta})}\\
-&\left<T(x,y,z), (1,0,0)\right>\\
-&=\scriptstyle{(\text{definición de la transformación lineal})}\\
-&\left<(y+z,x+y+2z,5x-y), (1,0,0)\right>\\
-&=\scriptstyle{(\text{desarrollo})}\\
-&y+z\\
-&=\scriptstyle{(\text{producto interno usual})}\\
-&\left<(x,y,z), (0,1,1)\right>\\
+&\mathcal{M}\models\neg(\forall x)\alpha\\
+&\iff\scriptstyle{(\text{2.4.5})}\\
+&\mathcal{M}\not\models(\forall x)\alpha\\
+&\iff\scriptstyle{(\text{2.4.5})}\\
+&(\overline{\exists}a\in |\mathcal{M}|)\mathcal{M}\not\models \alpha[\overline{a}/x]\\
+&\iff\scriptstyle{(\text{2.4.5})}\\
+&(\overline{\exists}a\in |\mathcal{M}|)\mathcal{M}\models\neg\alpha[\overline{a}/x]\\
+&\iff\scriptstyle{(\text{2.4.5})}\\
+&\mathcal{M}\models(\exists x)\neg\alpha
 \end{aligned}
 $$
 
-Con esto concluimos que $T^*(1,0,0)=(0,1,1)$.
+Con esto, podemos volver al primer paso probando lo que queríamos para las sentencias.
+
+**Demostración: $\neg(\forall x)\alpha\text{ eq }(\exists x)\neg\alpha$ en general**
+
+Para esta parte repetimos el mismo proceso, y cuando clausuremos la fórmula vamos a obtener una sentencia, para la cual ya sabemos que la propiedad se cumple.
+
+#### Propiedades de los cuantificadores
+
+- $(\forall x)(\forall y)\alpha\text{ eq }(\forall y)(\forall x)\alpha$
+- $(\exists x)(\exists y)\alpha\text{ eq }(\exists y)(\exists x)\alpha$
+- $(\forall x)\alpha\text{ eq }\alpha$ si $x\notin FV(\alpha)$
+- $(\exists x)\alpha\text{ eq }\alpha$ si $x\notin FV(\alpha)$
+
+#### Teorema 2.5.6 (cambio de variables)
+
+Sean $x,z$ tales que $x,z\notin FV(\alpha)$. En estas condiciones se cumplen las siguientes propiedades:
+
+- $((\forall x)\alpha)[x/y]\text{ eq }((\forall z)\alpha)[z/y]$
+- $((\exists x)\alpha)[x/y]\text{ eq }((\exists z)\alpha)[z/y]$
+
+##### Informalmente
+
+Sea $z$ tal que $z\notin FV(\alpha)$.
+En estas condiciones se cumplen las siguientes propiedades:
+
+- $(\forall x)\alpha(x)\text{ eq }(\forall z)\alpha(z)$
+- $(\exists x)\alpha(x)\text{ eq }(\exists z)\alpha(z)$
+
+#### Teorema 2.5.3 (distributividad generalizada)
+
+- $(\forall x)(\alpha\land\beta)\text{ eq }(\forall x)\alpha\land(\forall x)\beta$
+- $(\exists x)(\alpha\lor\beta)\text{ eq }(\exists x)\alpha\lor(\exists x)\beta$
+- $(\forall x)(\alpha\lor\beta)\text{ eq } (\forall x)\alpha\lor\beta$ con $x\notin FV(\beta)$
+- $(\exists x)(\alpha\land\beta)\text{ eq } (\exists x)\alpha\land\beta$ con $x\notin FV(\beta)$
+- $(\forall x)(\alpha\to\beta)\text{ eq }(\exists x)\alpha\to\beta$ con $x\notin FV(\beta)$
+- $(\exists x)(\alpha\to\beta)\text{ eq }(\forall x)\alpha\to\beta$ con $x\notin FV(\beta)$
+- $(\forall x)(\alpha\to\beta)\text{ eq }\alpha\to(\exists x)\beta$ con $x\notin FV(\alpha)$
+- $(\exists x)(\alpha\to\beta)\text{ eq }\alpha\to(\forall x)\beta$ con $x\notin FV(\alpha)$
+
+Más propiedades:
+
+- $\models(\forall x)\alpha\lor(\forall x)\beta\to(\forall x)(\alpha\lor\beta)$
+- $\models(\exists x)(\alpha\land\beta)\to(\exists x)\alpha\land(\exists x)\beta$
+
+#### Propiedades de sustitución
+
+1. Si $z\notin FV(t)$ entonces $t[c/x]=t[z/x][c/z]$
+2. Si $z$ no ocurre en $\alpha$ entonces $\alpha[c/x]=\alpha[z/x][c/z]$
+3. Sea $t$ libre para $x$ en $\alpha$ y $\beta$, y $\beta$ libre para $\$$ en $\alpha$. Entonces, $\alpha[\beta/\$][t/x]=\alpha[t/x][\beta[t/x]/\$]$
+
+#### Teorema 2.5.6 de sustitución
+
+Sean $s,t,t'\in TERM,\alpha,\beta,\varphi\in FORM$ tal que $t$  y $t'$ están libres para $x$ en $\alpha$, y $\alpha$ y $\beta$ están libres para $\$$ en $\varphi$. Entonces:
+
+- $\models t='t'\to s[t/x]='s[t'/x]$
+- $\models t='t'\to\alpha[t/x]\leftrightarrow\alpha[t'/x]$
+- $\models(\alpha\leftrightarrow\beta)\to(\varphi[\alpha/\$]\leftrightarrow\varphi[\beta/\$])$
+
+##### Más propiedades
+
+1. Sean $\alpha,\beta,\varphi\in FORM$ tales que $\models\alpha\leftrightarrow\beta$ (sin importar si $\alpha$ y $\beta$ están libres para $\$$ en $\varphi$). Entonces:
+
+    $$
+    \models\varphi[\alpha/\$]\leftrightarrow\varphi[\beta/\$]
+    $$
+
+2. Sean $\alpha,\beta\in FORM$ tales que $\models\alpha\leftrightarrow\beta$. Entonces:
+
+    - $(\forall x)\alpha\leftrightarrow(\forall x)\beta$
+    - $(\exists x)\alpha\leftrightarrow(\exists x)\beta$
+
+##### Idea
+
+La idea de todo esto es formalizar la noción muy interiorizada que tenemos sobre sustituir expresiones equivalentes entre si.
+
+### Forma normal prenexa
+
+Sea $\alpha\in FORM$. Decimos que $\alpha$ está en forma normal prenexa sii $\alpha$ es una fórmula abierta precedida de cero o más cuantificadores. Por ejemplo:
+
+- $(\forall x)(\exists y)(\forall z)(\forall w)(f(z,w)='x\to f(w,z)='y)$
+
+#### Teorema 2.5.8
+
+Para toda $\alpha\in FORM$ existe $\beta$ tal que $\beta$ está en forma normal prenexa y $\alpha\text{ eq }\beta$
+
+### Relativización
+
+Como podemos traducir la siguiente oración?
+
+- $(\forall\varepsilon>0)(\exists n)(\forall m > n)|f(n)-f(m)|<\varepsilon$
+
+Primero tengamos en cuenta que hay convenciones para los nombres de variables:
+
+- $\varepsilon\in\mathbb{R}$
+- $m,n\in\mathbb{N}$
+
+Una primera traducción sería:
 
 $$
-\begin{aligned}
-&\left<(x,y,z), T^*(0,1,0)\right>\\
-&=\scriptstyle{(\text{definición de la adjunta})}\\
-&\left<T(x,y,z), (0,1,0)\right>\\
-&=\scriptstyle{(\text{definición de la transformación lineal})}\\
-&\left<(y+z,x+y+2z,5x-y), (0,1,0)\right>\\
-&=\scriptstyle{(\text{desarrollo})}\\
-&x+y+2z\\
-&=\scriptstyle{(\text{producto interno usual})}\\
-&\left<(x,y,z), (1,1,2)\right>\\
-\end{aligned}
+(\forall\varepsilon)(\varepsilon>0\to(\exists n\in\mathbb{N})(\forall m\in\mathbb{N})(m>n\to|f(n)-f(m)|)<\varepsilon)
 $$
 
-Con esto concluimos que $T^*(0,1,0)=(1,1,2)$
+Para terminar la traducción, definamos la siguiente estructura:
+
+- $\mathcal{R}=\{\mathbb{R},\mathbb{N}, >,f, F, 0\}$ donde $F(a,b)=|f(a)-f(b)|$
+
+Por lo tanto ahora ser un natural es un nuevo predicado:
 
 $$
-\begin{aligned}
-&\left<(x,y,z), T^*(0,0,1)\right>\\
-&=\scriptstyle{(\text{definición de la adjunta})}\\
-&\left<T(x,y,z), (0,0,1)\right>\\
-&=\scriptstyle{(\text{definición de la transformación lineal})}\\
-&\left<(y+z,x+y+2z,5x-y), (0,0,1)\right>\\
-&=\scriptstyle{(\text{desarrollo})}\\
-&5x-y\\
-&=\scriptstyle{(\text{producto interno usual})}\\
-&\left<(x,y,z), (5,-1,0)\right>\\
-\end{aligned}
+(\forall\varepsilon)(\varepsilon>0\to(\exists n)\mathbb{N}(n)\land(\forall m)(\mathbb{N}(m)\to(m>n\to\varepsilon>F(n,m)))<\varepsilon)
 $$
 
-Con esto concluimos que $T^*(0,0,1)=(5,-1,0)$.
+#### Cuantificadores relativizados
 
-Ahora, podemos decir que:
+Se definien cuantificadores relativizados para esto:
 
-$$
-\begin{aligned}
-T^*(x',y',z')&=x'T^*(1,0,0)+y'T^*(0,1,0)+z'T^*(0,0,1)\\
-&= x'(0,1,1)+y'(1,1,2)+z'(5,-1,0)\\
-&=(y'+5z',x'+y'-z',x'+2y')\\
-\end{aligned}
-$$
-
-Y con esto hallamos $T^*(x',y',z')$ para todo $(x',y',z')\in \mathbb{R}^3$
-
-### Ejemplo 2
-
-Sea $V=W=\mathcal{M}_{n\times n}$ con el producto interno $\left<A, B\right>=tr(B^tA)$, $\forall A,B\in\mathcal{M}_{n\times n}$.
-Dada $M\in\mathcal{M}_{n\times n}$, tomamos la siguiente transformación lineal:
-
-- $T:\mathcal{M}_{n\times n}\to\mathcal{M}_{n\times n}$
-- $T(A)=MA\quad\forall A\in\mathcal{M}_{n\times n}$
-
-Veamos como hallar $T^*$, sabemos que por definición de adjunta, debe cumplirse que:
-
-$$
-\left<T(A), B\right>=\left<A, T^*(B)\right>\quad\forall A,B\in\mathcal{M}_{n\times n}
-$$
-
-Partamos de $\left<T(A), B\right>$ y tratemos de llegar a $\left<A, T^*(B)\right>$:
-
-$$
-\begin{aligned}
-&\left<T(A), B\right>\\
-&=\scriptstyle{(\text{definición de T})}\\
-&\left<MA, B\right>\\
-&=\scriptstyle{(\text{definición del producto interno dado})}\\
-&tr(B^tMA)\\
-&=\scriptstyle{(\text{propiedades de la traspuesta})}\\
-&tr((M^tB)^tA)\\
-&=\scriptstyle{(\text{definición del producto interno dado})}\\
-&\left<A, M^tB\right>\\
-&=\scriptstyle{(\text{considerando }T^*(B)=M^tB)}\\
-&\left<A, T^*(B)\right>
-\end{aligned}
-$$
-
-Considerando que este razonamiento es válido para todo $A\in\mathcal{M}_{n\times n}$, podemos definir $T^*(B)=M^tB$
-
-## Propiedades de la adjunta
-
-Sean $V,W,U$ espacios vectoriales sobre el mismo $\mathbb{K}$ con producto interno.
-
-1. Sean $T_1:V\to W$ y $T_2:V\to W$, entonces $(T_1+T_2)^*=T_1^*+T_2^*$
-2. Sean $T:V\to W,\alpha\in\mathbb{K}$, entonces $(\alpha T)^*=\overline{\alpha}T^*$
-3. Sean $T:V\to W$ y $S:W\to U$, $(S\circ T:V\to U)$, entonces $(S\circ T)^*=T^*\circ S^*$
-4. Sea $T:V\to W$, entonces $(T^*)^*=T$
-5. Sea $T:V\to W$, $T$ es invertible $\iff$ $T^*$ es invertible y además $(T^*)^{-1}=(T^{-1})^*$
-6. Sea $Id:V\to V$ la transformación identidad, entonces $Id=Id^*$
-7. Sea $T:V\to V$ un operador lineal. $\lambda$ es un valor propio de $T\iff\overline{\lambda}$ es un valor propio de $T^*$
+- $(\forall n\in\mathbb{N})\alpha:=(\forall n)(\mathbb{N}(n)\to\alpha)$
+- $(\exists n\in\mathbb{N})\alpha:=(\exists n)(\mathbb{N}(n)\land\alpha)$
